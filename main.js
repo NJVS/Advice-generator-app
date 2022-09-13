@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadAdvice(link) {
   const adContainer = document.querySelector('#adContainer');
 
-  fetch(link).then(res => res.json())
+  fetch(link, {cache: 'no-cache'}).then(res => res.json())
     .then(data => setTimeout(() => {
       // update id and message
       document.querySelector('#adNum').innerHTML = data.slip.id;
