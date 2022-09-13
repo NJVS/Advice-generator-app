@@ -1,0 +1,214 @@
+:root {
+  --f-style-primary: "Manrope", sans-serif;
+  --c-primary: hsl(150, 100%, 66%);
+  --c-error: hsl(0, 100%, 66%);
+  --c-black: hsl(218, 23%, 16%);
+  --c-dark: hsl(217, 19%, 24%);
+  --c-gray: hsl(217, 19%, 38%);
+  --c-light: hsl(193, 38%, 86%);
+}
+
+/* Set core root default */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  width: 100%;
+  height: auto;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: var(--f-style-primary);
+  background-color: var(--c-black);
+}
+
+section.container {
+  position: relative;
+  width: min(540px, 95%);
+  height: auto;
+  padding: 3rem;
+  background-color: var(--c-dark);
+  border-radius: 1rem;
+  text-align: center;
+}
+@media (max-width: 426px) {
+  section.container {
+    padding: 2rem 1.75rem;
+  }
+}
+section.container .advice {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  font-weight: 800;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+section.container .advice.loading {
+  max-height: 0 !important;
+}
+section.container .advice.error .advice_number,
+section.container .advice.error .advice_message {
+  display: none !important;
+}
+section.container .advice.error .advice_error {
+  display: block !important;
+}
+section.container .advice .advice_number {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--c-primary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+section.container .advice .advice_message {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--c-light);
+  font-size: clamp(1.375rem, 4.5vw, 1.725rem);
+  line-height: 1.25;
+}
+section.container .advice .advice_message::before {
+  content: open-quote;
+}
+section.container .advice .advice_message::after {
+  content: close-quote;
+}
+@media (max-width: 426px) {
+  section.container .advice .advice_message {
+    margin-bottom: 0;
+  }
+}
+section.container .advice .advice_error {
+  display: none;
+  margin-bottom: 1rem;
+  color: var(--c-error);
+  font-size: clamp(1.375rem, 4.5vw, 1.725rem);
+}
+section.container .divider > img {
+  margin: 1.25rem auto;
+}
+section.container button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--c-primary);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+section.container button:hover, section.container button:focus:not(:active) {
+  box-shadow: 0 0 1.75rem 0.75rem rgba(82, 255, 168, 0.3);
+}
+section.container button:active {
+  box-shadow: none;
+}
+
+footer.attribution {
+  position: absolute;
+  bottom: 5px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--c-light);
+  font-weight: 400;
+}
+footer.attribution a {
+  color: var(--c-primary);
+}
+
+/*# sourceMappingURL=main.css.map */

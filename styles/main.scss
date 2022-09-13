@@ -1,0 +1,123 @@
+@use './base';
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: var(--f-style-primary);
+  background-color: var(--c-black);
+}
+
+section.container {
+  position: relative;
+  width: min(540px, 95%);
+  height: auto;
+  padding: 3rem;
+  background-color: var(--c-dark);
+  border-radius: 1rem;
+  text-align: center;
+
+  @media (max-width: 426px) {
+    padding: 2rem 1.75rem;
+  }
+
+  .advice {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    font-weight: 800;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &.loading {
+      max-height: 0 !important;
+    }
+    &.error {
+      .advice_number,
+      .advice_message {
+        display: none !important;
+      }
+      .advice_error {
+        display: block !important;
+      }
+    }
+
+    .advice_number {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--c-primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+    .advice_message {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--c-light);
+      font-size: clamp(1.375rem, 4.5vw, 1.725rem);
+      line-height: 1.25;
+      &::before {
+        content: open-quote;
+      }
+      &::after {
+        content: close-quote;
+      }
+
+      @media (max-width: 426px) {
+        margin-bottom: 0;
+      }
+    }
+    .advice_error {
+      display: none;
+      margin-bottom: 1rem;
+      color: var(--c-error);
+      font-size: clamp(1.375rem, 4.5vw, 1.725rem);
+    }
+  }
+
+  .divider > img {
+    margin: 1.25rem auto;
+  }
+
+  button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--c-primary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+
+    &:hover,
+    &:focus:not(:active) {
+      box-shadow: 0 0 1.75rem 0.75rem rgba(#52ffa8, 0.3);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+
+footer.attribution {
+  position: absolute;
+  bottom: 5px;
+  font-size: 11px; text-align: center;
+  color: var(--c-light);
+  font-weight: 400;
+  a {
+    color: var(--c-primary);
+  }
+}

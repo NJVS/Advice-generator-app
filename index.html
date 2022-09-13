@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+  <main>
+    <section class="container">
+      <div class="advice" id="adContainer">
+        <h5 class="advice_number">Advice #<span id="adNum">117</span></h5>
+        <p id="adMsg" class="advice_message">
+          It is easy to sit up and take notice, what's difficult is getting up and taking action
+        </p>
+        <h1 class="advice_error">Something went wrong, please try again later.</h4>
+      </div>
+      <!-- <img class="divider" src="./images/pattern-divider-desktop.svg" alt="divider"> -->
+      <picture class="divider">
+        <source media="(max-width: 426px)" srcset="./images/pattern-divider-mobile.svg">
+        <img src="./images/pattern-divider-desktop.svg" alt="divider-lg">
+      </picture>
+      <button id="getAdvice">
+        <img src="./images/icon-dice.svg" alt="generate advice slip">
+      </button>
+    </section>
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">lieneil</a>.
+    </footer>
+  </main>
+  
+  <script src="./main.js"></script>
+</body>
+</html>
