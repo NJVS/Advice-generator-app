@@ -1,6 +1,6 @@
+let link = "https://api.adviceslip.com/advice";
 
 document.addEventListener('DOMContentLoaded', () => {
-let link = "https://api.adviceslip.com/advice";
   // Initial Load
   // loadAdvice(link);
 
