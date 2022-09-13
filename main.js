@@ -2,7 +2,7 @@ let link = "https://api.adviceslip.com/advice";
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initial Load
-  // loadAdvice(link);
+  loadAdvice(link);
 
   // Click Event
   document.querySelector('#getAdvice').addEventListener('click', () => {
